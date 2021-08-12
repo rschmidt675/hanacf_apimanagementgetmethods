@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIResource xmlns="http://www.sap.com/apimgmt">
+    <name>percentualVenda.xsjs</name>
+    <title>percentualVenda.xsjs</title>
+    <canShowGet>true</canShowGet>
+    <canShowPost>true</canShowPost>
+    <canShowPut>true</canShowPut>
+    <canShowDelete>true</canShowDelete>
+    <canShowHead>true</canShowHead>
+    <canShowOption>true</canShowOption>
+    <canShowPatch>true</canShowPatch>
+    <isGetChecked>true</isGetChecked>
+    <isPostChecked>false</isPostChecked>
+    <isPutChecked>false</isPutChecked>
+    <isDeleteChecked>false</isDeleteChecked>
+    <isHeadChecked>false</isHeadChecked>
+    <isOptionChecked>false</isOptionChecked>
+    <isPatchChecked>false</isPatchChecked>
+    <resource_path>/percentualVenda.xsjs</resource_path>
+    <proxyEndPointName>default</proxyEndPointName>
+    <documentations>
+        <documentation locale="en" mimeType="HTML">percentualVenda.xsjs</documentation>
+    </documentations>
+</APIResource>

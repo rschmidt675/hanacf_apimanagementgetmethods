@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndPoint default="true" xmlns="http://www.sap.com/apimgmt">
+    <name>default</name>
+    <base_path>/appComercial/v1</base_path>
+    <properties/>
+    <routeRules>
+        <routeRule>
+            <name>default</name>
+            <targetEndPointName>default</targetEndPointName>
+            <sequence>1</sequence>
+            <faultRules/>
+        </routeRule>
+    </routeRules>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps/>
+        </request>
+        <response>
+            <isRequest>false</isRequest>
+            <steps/>
+        </response>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps/>
+        </request>
+        <response>
+            <isRequest>false</isRequest>
+            <steps/>
+        </response>
+    </postFlow>
+    <conditionalFlows>
+        <conditionalFlow>
+            <name>vendaLojas.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/vendaLojas.xsjs" OR proxy.pathsuffix MatchesPath "/vendaLojas.xsjs/**" OR proxy.pathsuffix MatchesPath "/vendaLojas.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>1</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>Inadimplencia</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/currConv.xsjs" OR proxy.pathsuffix MatchesPath "/currConv.xsjs/**" OR proxy.pathsuffix MatchesPath "/currConv.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>2</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>inadVacLojas.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/inadVacLojas.xsjs" OR proxy.pathsuffix MatchesPath "/inadVacLojas.xsjs/**" OR proxy.pathsuffix MatchesPath "/inadVacLojas.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>3</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>DefaultFaultFlow</name>
+            <request>
+                <isRequest>true</isRequest>
+                <steps>
+                    <step>
+                        <policy_name>defaultRaiseFaultPolicy</policy_name>
+                        <condition> </condition>
+                        <sequence>1</sequence>
+                    </step>
+                </steps>
+            </request>
+            <conditions>proxy.pathsuffix MatchesPath "/inadimplencia.xsjs" OR proxy.pathsuffix MatchesPath "/inadimplencia.xsjs/**" OR proxy.pathsuffix MatchesPath "/inadimplencia.xsjs(**" OR proxy.pathsuffix MatchesPath "/listaMeses.xsjs" OR proxy.pathsuffix MatchesPath "/listaMeses.xsjs/**" OR proxy.pathsuffix MatchesPath "/listaMeses.xsjs(**" OR proxy.pathsuffix MatchesPath "/performLojista12MShop.xsjs" OR proxy.pathsuffix MatchesPath "/performLojista12MShop.xsjs/**" OR proxy.pathsuffix MatchesPath "/performLojista12MShop.xsjs(**" OR proxy.pathsuffix MatchesPath "/reducaoAluguelMinimo.xsjs" OR proxy.pathsuffix MatchesPath "/reducaoAluguelMinimo.xsjs/**" OR proxy.pathsuffix MatchesPath "/reducaoAluguelMinimo.xsjs(**" OR proxy.pathsuffix MatchesPath "/percentualVenda.xsjs" OR proxy.pathsuffix MatchesPath "/percentualVenda.xsjs/**" OR proxy.pathsuffix MatchesPath "/percentualVenda.xsjs(**" OR proxy.pathsuffix MatchesPath "/aluguelContratual.xsjs" OR proxy.pathsuffix MatchesPath "/aluguelContratual.xsjs/**" OR proxy.pathsuffix MatchesPath "/aluguelContratual.xsjs(**" OR proxy.pathsuffix MatchesPath "/detalhesContrato.xsjs" OR proxy.pathsuffix MatchesPath "/detalhesContrato.xsjs/**" OR proxy.pathsuffix MatchesPath "/detalhesContrato.xsjs(**" OR proxy.pathsuffix MatchesPath "/performLojista.xsjs" OR proxy.pathsuffix MatchesPath "/performLojista.xsjs/**" OR proxy.pathsuffix MatchesPath "/performLojista.xsjs(**" OR proxy.pathsuffix MatchesPath "/listaLojas.xsjs" OR proxy.pathsuffix MatchesPath "/listaLojas.xsjs/**" OR proxy.pathsuffix MatchesPath "/listaLojas.xsjs(**" OR proxy.pathsuffix MatchesPath "/inadVacLojas.xsjs" OR proxy.pathsuffix MatchesPath "/inadVacLojas.xsjs/**" OR proxy.pathsuffix MatchesPath "/inadVacLojas.xsjs(**" OR proxy.pathsuffix MatchesPath "/vendaLojas.xsjs" OR proxy.pathsuffix MatchesPath "/vendaLojas.xsjs/**" OR proxy.pathsuffix MatchesPath "/vendaLojas.xsjs(**"</conditions>
+            <readOnly>true</readOnly>
+            <sequence>14</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>listaLojas.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/listaLojas.xsjs" OR proxy.pathsuffix MatchesPath "/listaLojas.xsjs/**" OR proxy.pathsuffix MatchesPath "/listaLojas.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>5</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>performLojista.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/performLojista.xsjs" OR proxy.pathsuffix MatchesPath "/performLojista.xsjs/**" OR proxy.pathsuffix MatchesPath "/performLojista.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>6</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>detalhesContrato.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/detalhesContrato.xsjs" OR proxy.pathsuffix MatchesPath "/detalhesContrato.xsjs/**" OR proxy.pathsuffix MatchesPath "/detalhesContrato.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>7</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>aluguelContratual.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/aluguelContratual.xsjs" OR proxy.pathsuffix MatchesPath "/aluguelContratual.xsjs/**" OR proxy.pathsuffix MatchesPath "/aluguelContratual.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>8</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>percentualVenda.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/percentualVenda.xsjs" OR proxy.pathsuffix MatchesPath "/percentualVenda.xsjs/**" OR proxy.pathsuffix MatchesPath "/percentualVenda.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>9</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>reducaoAluguelMinimo.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/reducaoAluguelMinimo.xsjs" OR proxy.pathsuffix MatchesPath "/reducaoAluguelMinimo.xsjs/**" OR proxy.pathsuffix MatchesPath "/reducaoAluguelMinimo.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>10</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>performLojista12MShop.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/performLojista12MShop.xsjs" OR proxy.pathsuffix MatchesPath "/performLojista12MShop.xsjs/**" OR proxy.pathsuffix MatchesPath "/performLojista12MShop.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>11</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>listaMeses.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/listaMeses.xsjs" OR proxy.pathsuffix MatchesPath "/listaMeses.xsjs/**" OR proxy.pathsuffix MatchesPath "/listaMeses.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>12</sequence>
+        </conditionalFlow>
+        <conditionalFlow>
+            <name>inadimplencia.xsjs</name>
+            <conditions>(proxy.pathsuffix MatchesPath "/inadimplencia.xsjs" OR proxy.pathsuffix MatchesPath "/inadimplencia.xsjs/**" OR proxy.pathsuffix MatchesPath "/inadimplencia.xsjs(**")AND(request.verb = "GET")</conditions>
+            <readOnly>true</readOnly>
+            <sequence>13</sequence>
+        </conditionalFlow>
+    </conditionalFlows>
+</ProxyEndPoint>

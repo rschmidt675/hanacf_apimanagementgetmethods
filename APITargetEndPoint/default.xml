@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndPoint xmlns="http://www.sap.com/apimgmt">
+    <name>default</name>
+    <provider_id>AppCom_con1</provider_id>
+    <additionalAPIProviders/>
+    <isDefault>false</isDefault>
+    <relativePath>/srv</relativePath>
+    <properties/>
+    <faultRules/>
+    <preFlow>
+        <name>PreFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps>
+                <step>
+                    <policy_name>get1</policy_name>
+                    <condition> </condition>
+                    <sequence>3</sequence>
+                </step>
+                <step>
+                    <policy_name>cache1</policy_name>
+                    <condition> </condition>
+                    <sequence>4</sequence>
+                </step>
+                <step>
+                    <policy_name>set1</policy_name>
+                    <condition> </condition>
+                    <sequence>5</sequence>
+                </step>
+                <step>
+                    <policy_name>servc1</policy_name>
+                    <condition> </condition>
+                    <sequence>6</sequence>
+                </step>
+                <step>
+                    <policy_name>reada</policy_name>
+                    <condition> </condition>
+                    <sequence>7</sequence>
+                </step>
+                <step>
+                    <policy_name>cache2</policy_name>
+                    <condition> </condition>
+                    <sequence>8</sequence>
+                </step>
+                <step>
+                    <policy_name>set2</policy_name>
+                    <condition> </condition>
+                    <sequence>9</sequence>
+                </step>
+                <step>
+                    <policy_name>apikey</policy_name>
+                    <condition> </condition>
+                    <sequence>1</sequence>
+                </step>
+                <step>
+                    <policy_name>checksqlthreat</policy_name>
+                    <condition> </condition>
+                    <sequence>2</sequence>
+                </step>
+            </steps>
+        </request>
+        <response>
+            <isRequest>false</isRequest>
+            <steps/>
+        </response>
+    </preFlow>
+    <postFlow>
+        <name>PostFlow</name>
+        <request>
+            <isRequest>true</isRequest>
+            <steps/>
+        </request>
+        <response>
+            <isRequest>false</isRequest>
+            <steps/>
+        </response>
+    </postFlow>
+    <conditionalFlows/>
+    <loadBalancerConfigurations>
+        <isRetry>false</isRetry>
+        <healthMonitor>
+            <isEnabled>false</isEnabled>
+        </healthMonitor>
+    </loadBalancerConfigurations>
+</TargetEndPoint>
